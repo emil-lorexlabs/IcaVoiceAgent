@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f7f5ef">
+    <title>ICA röstassistent</title>
+    <meta name="description" content="Prata svenska med din röstassistent och hitta inspiration på ICA.se.">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23bf292e'/%3E%3Cpath d='M26 17a6 6 0 0112 0v16a6 6 0 01-12 0zm-6 15v2a12 12 0 0024 0v-2M32 46v8m-7 0h14' fill='none' stroke='white' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./config.js"></script>
+    <script type="module" src="./app.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="ICA röstassistent, startsida">
+        <span class="brand-mark" aria-hidden="true">i</span>
+        <span>ICA <span class="brand-light">röstassistent</span></span>
+      </a>
+      <span class="language"><span aria-hidden="true">●</span> På svenska</span>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow">LITE ENKLARE I VARDAGEN</p>
+        <h1 id="page-title">Vad äter vi<br><em>i veckan?</em></h1>
+        <p class="description">Planera frukost, lunch eller middag med recept från ICA.se. Din assistent lyssnar på svenska och hjälper dig att hitta mat som passar dig.</p>
+      </section>
+
+      <section class="voice-panel" aria-label="Röstsamtal">
+        <div class="panel-top">
+          <span class="panel-label">DIN RÖSTASSISTENT</span>
+          <span class="status" id="status" role="status" aria-live="polite">Redo att prata</span>
+        </div>
+        <div class="voice-orb" id="voice-orb" aria-hidden="true">
+          <div class="orb-ring ring-one"></div>
+          <div class="orb-ring ring-two"></div>
+          <div class="orb-core">
+            <svg viewBox="0 0 48 48" fill="none"><rect x="18" y="8" width="12" height="23" rx="6"/><path d="M12 24v2a12 12 0 0 0 24 0v-2M24 38v5M18 43h12"/></svg>
+          </div>
+        </div>
+        <h2 id="call-title">En bra middag börjar med ett samtal.</h2>
+        <p id="call-hint" class="call-hint">Tryck på knappen och tillåt mikrofonen.</p>
+        <button class="call-button" id="call-button" type="button" aria-pressed="false">
+          <svg class="button-mic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M6 11v2a6 6 0 0 0 12 0v-2M12 19v3M9 22h6"/></svg>
+          <span id="button-label">Anslut till agenten</span>
+        </button>
+        <p class="privacy-note">Mikrofonen används bara medan samtalet är igång.<br>Ljudet skickas till Google för att skapa svar.</p>
+        <p class="error" id="error" role="alert" hidden></p>
+      </section>
+
+      <section class="ideas" aria-labelledby="ideas-title">
+        <h2 id="ideas-title">Du kan till exempel säga</h2>
+        <div class="idea-grid">
+          <article><span class="idea-number">01</span><p>”Planera fem vegetariska middagar för två personer.”</p><span class="idea-category">Veckans måltider</span></article>
+          <article><span class="idea-number">02</span><p>”Hitta enkla frukostar och lunchlådor för veckan.”</p><span class="idea-category">Mat som passar dig</span></article>
+          <article><span class="idea-number">03</span><p>”Vad kan vi laga med lök och tomat som redan finns hemma?”</p><span class="idea-category">Ta vara på det du har</span></article>
+        </div>
+      </section>
+
+      <section class="conversation" aria-labelledby="conversation-title">
+        <div class="conversation-heading"><h2 id="conversation-title">Samtalet</h2><span>Text från ert samtal visas här</span></div>
+        <div id="transcripts" class="transcripts" role="log" aria-live="polite" aria-relevant="additions text">
+          <p class="empty-transcript" id="empty-transcript">Här är det tyst än så länge. Ska vi börja?</p>
+        </div>
+      </section>
+    </main>
+
+    <footer><span>Din assistent för vardagens frågor.</span><span>Google Sök · ICA.se</span></footer>
+    <noscript><p class="error">Aktivera JavaScript i webbläsaren för att starta ett röstsamtal.</p></noscript>
+  </body>
+</html>

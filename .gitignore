@@ -1,0 +1,15 @@
+# All webpage files are public. Keep secrets on the Cloud Run backend.
+.env
+.env.*
+*.pem
+*.key
+*service-account*.json
+*credentials*.json
+node_modules/
+.aws/
+.agents/
+.codex/
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
